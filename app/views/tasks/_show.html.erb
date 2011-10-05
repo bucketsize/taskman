@@ -1,0 +1,36 @@
+<h1>Task View</h1>
+<p>
+  <b>Label:</b>
+  <%= @task.label %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @task.desc %>
+</p>
+
+<h2>Subtasks</h2>
+
+<table>
+  <tr>
+    <th>#ID</th>
+    <th>Label</th>
+    <th>Desc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subtasks.each do |task| %>
+  <tr>
+    <td><%= task.id %></td>
+    <td><%= task.label %></td>
+    <td><%= task.desc %></td>
+    <% tp, tc = task.parent, task.children.count %>
+    <td><%= link_to "Sub<#{tp.nil? ? 0 : tp.id}, #{tc}>", task_new_sub_path(task) %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
