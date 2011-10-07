@@ -1,8 +1,8 @@
-<h2>Subtask View</h2>
+<h2>Task View</h2>
 <p id="notice"><%= notice %></p>
 
 <%= render 'show'%>
 <br/>
-<%= link_to 'Subtask', task_new_sub_path(@task) %> |
+<%= link_to 'New Task', task_new_sub_path(@task) %> |
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', show_task_path(@task.parent) %>

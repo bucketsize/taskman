@@ -1,3 +1,4 @@
+<% if @task.label != 'main' %>
 <p>
   <b>Label:</b>
   <%= @task.label %>
@@ -6,9 +7,10 @@
 <p>
   <b>Desc:</b>
   <%= @task.desc %>
-</p>
+  </p>
+<% end %>
 
-<h4>Subtasks</h4>
+<h4>Tasks</h4>
 
 <table>
   <tr>
