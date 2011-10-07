@@ -2,12 +2,12 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all.select{|t| t.parent == nil}
-    
+    @task = Task.new(:label => 'main')
+    @subtasks = Task.all.select{|t| t.parent == nil}
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @tasks }
+      format.xml  { render :xml => @subtasks }
     end
   end
 
