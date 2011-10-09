@@ -54,3 +54,11 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+#task_desc { width: 30%;}
+#subtasks_desc { width: 30%;}
+
+span.task_id { font-size: 14px; font-weight: bold;}
+span.task_label { font-size:18px; font-style: italic; }
+td.task_attr { font-size: 12px; float: right; }
+tr.task_item { font-size: 12px;  }

@@ -1,10 +1,7 @@
-<h2>Task view</h2>
+<h2>Task View</h2>
 <p id="notice"><%= notice %></p>
 
-<%= render 'task_desc' %>
-<br/>
-<%= render 'subtasks_desc' %>
-
+<%= render 'show'%>
 <br/>
 <%= link_to 'New Task', task_new_sub_path(@task) %> |
 <%= link_to 'Edit', edit_task_path(@task) %> |
