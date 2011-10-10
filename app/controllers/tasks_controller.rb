@@ -73,7 +73,11 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+<<<<<<< HEAD
         format.html { redirect_to(@task.parent, :notice => 'Task was successfully created.') }
+=======
+        format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
+>>>>>>> cca6e87a4e1a01edebfa08b400b74142211194a2
         format.xml  { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }
