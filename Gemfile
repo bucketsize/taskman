@@ -9,6 +9,9 @@ gem 'rails', '3.0.4'
 
 gem 'jdbc-sqlite3' # jruby
 gem 'activerecord-jdbcsqlite3-adapter'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use unicorn as the web server
 # gem 'unicorn'

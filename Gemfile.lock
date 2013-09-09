@@ -34,17 +34,45 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     arel (2.0.10)
+    bcrypt-ruby (3.1.2-java)
     builder (2.1.2)
+    devise (1.5.4)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
+    hashie (2.0.5)
+    httpauth (0.2.0)
     i18n (0.6.0)
     jdbc-sqlite3 (3.7.2.1)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    multi_json (1.7.9)
+    multipart-post (1.2.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.0.7)
     polyglot (0.3.2)
     rack (1.2.4)
     rack-mount (0.6.14)
@@ -70,6 +98,8 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.30)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   java
@@ -78,5 +108,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
+  devise
   jdbc-sqlite3
+  omniauth
+  omniauth-facebook
   rails (= 3.0.4)
