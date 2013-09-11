@@ -1,5 +1,5 @@
 require "omniauth-facebook"
-
+require "omniauth-google-oauth2"
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -209,4 +209,5 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
   config.omniauth :facebook, '166377710217801', '61b51ad6505dac6805aa298e266d9d93'
+  config.omniauth :google_oauth2, '677603168679.apps.googleusercontent.com', 'LokC7UE2MwEwi-2QiySc0m5K'
 end

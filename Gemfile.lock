@@ -34,7 +34,9 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     arel (2.0.10)
+    bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-java)
+    bcrypt-ruby (3.1.2-x86-mingw32)
     builder (2.1.2)
     devise (1.5.4)
       bcrypt-ruby (~> 3.0)
@@ -69,6 +71,9 @@ GEM
       rack
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
+    omniauth-google-oauth2 (0.2.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -112,4 +117,5 @@ DEPENDENCIES
   jdbc-sqlite3
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
   rails (= 3.0.4)

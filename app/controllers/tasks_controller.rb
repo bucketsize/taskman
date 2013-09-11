@@ -1,9 +1,13 @@
+require 'pp'
+
 class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
+    pp current_user
     @task = Task.new(:label => 'main')
-    @subtasks = Task.all.select{|t| t.parent == nil}
+    @subtasks = Task.all.select{|t| t.parent == nil and t.user == current_user}
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,6 +58,7 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
+    @task.user = current_user
 
     respond_to do |format|
       if @task.save
@@ -70,6 +75,7 @@ class TasksController < ApplicationController
   def create_sub
     @task = Task.new(params[:task])
     @task.parent_id = params[:task_id]
+    @task.user = current_user
 
     respond_to do |format|
       if @task.save
