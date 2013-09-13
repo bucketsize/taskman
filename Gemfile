@@ -17,6 +17,8 @@ gem "omniauth-google-oauth2"
 
 gem 'trinidad'
 #gem 'rack-ssl', :require => 'rack/ssl'
+gem 'bartt-ssl_requirement', '~>1.4.0', :require => 'ssl_requirement'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
