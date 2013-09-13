@@ -4,4 +4,6 @@ log/*.log
 tmp/
 *.swp
 **.swp
+*~
+**~
 
