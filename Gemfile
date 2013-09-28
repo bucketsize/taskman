@@ -1,5 +1,10 @@
 source 'http://rubygems.org'
 
+#jruby-heroku
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.0'
+gem 'activerecord-jdbcpostgresql-adapter'
+gem 'rails_12factor', group: :production
+
 gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
@@ -15,10 +20,13 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 
-gem 'trinidad'
+#gem 'trinidad' # more mem
+gem 'puma'
+
 #gem 'rack-ssl', :require => 'rack/ssl'
 gem 'bartt-ssl_requirement', '~>1.4.0', :require => 'ssl_requirement'
 
+gem 'heroku-headless'
 
 # Use unicorn as the web server
 # gem 'unicorn'
