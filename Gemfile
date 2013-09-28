@@ -3,16 +3,20 @@ source 'http://rubygems.org'
 #jruby-heroku
 ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.0'
 gem 'activerecord-jdbcpostgresql-adapter'
+
+#heroku
 gem 'rails_12factor', group: :production
 
 gem 'rails', '3.0.4'
+gem 'rake', '0.9.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'sqlite3'     # cruby 
+# gem 'sqlite3' 
 
-gem 'jdbc-sqlite3' # jruby
+#jruby
+gem 'jdbc-sqlite3'
 gem 'activerecord-jdbcsqlite3-adapter'
 
 gem 'devise'
@@ -26,6 +30,7 @@ gem 'puma'
 #gem 'rack-ssl', :require => 'rack/ssl'
 gem 'bartt-ssl_requirement', '~>1.4.0', :require => 'ssl_requirement'
 
+#easy deployment
 gem 'heroku-headless'
 
 # Use unicorn as the web server
