@@ -7,7 +7,6 @@
 
 <br/>
 <%= link_to 'New Task', task_new_sub_path(@task) %> |
-<%= link_to 'Edit', edit_task_path(@task) %> |
 
 <% if @task.parent.nil? %>
 	<%= link_to 'Back', tasks_path %>

@@ -18,7 +18,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: taskman_production
+  database: taskman
   pool: 5
   username: taskman
   password: mantask
