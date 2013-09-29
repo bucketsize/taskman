@@ -209,5 +209,6 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
   config.omniauth :facebook, '166377710217801', '61b51ad6505dac6805aa298e266d9d93'
-  config.omniauth :google_oauth2, '677603168679.apps.googleusercontent.com', 'LokC7UE2MwEwi-2QiySc0m5K'
+  #config.omniauth :google_oauth2, '677603168679.apps.googleusercontent.com', 'LokC7UE2MwEwi-2QiySc0m5K'
+  config.omniauth :google_oauth2, '389443925830.apps.googleusercontent.com', 'KOA1Qdid9Iy9ry1iR-y3wFtM'
 end
