@@ -6,12 +6,11 @@ TaskMan::Application.routes.draw do
     }
 
   resources :users
-
+  
   resources :tasks
-
   resources :tasks do
-    get :new_sub
-    post :create_sub
+    get :new
+    post :create
   end
 
   # The priority is based upon order of creation:

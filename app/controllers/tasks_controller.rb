@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    pp current_user
     @task = Task.new(:label => 'main')
     @subtasks = Task.all.select{|t| t.parent == nil and t.user == current_user}
 
@@ -31,18 +30,13 @@ class TasksController < ApplicationController
   # GET /tasks/new.xml
   def new
     @task = Task.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @task }
+    
+    if params[:task_id].nil?
+      @parent = Task.new
+    else
+      @parent = Task.find(params[:task_id])
     end
-  end
 
-
-  def new_sub
-    @parent = Task.find(params[:task_id])
-    @task = Task.new
-  
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @task }
@@ -59,6 +53,13 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     @task.user = current_user
+    
+    # set the parent task
+    if params[:task][:id].nil? or params[:task][:id].blank? 
+      @task.parent = nil
+    else
+      @task.parent = Task.find(params[:task][:id])
+    end
 
     respond_to do |format|
       if @task.save
@@ -71,23 +72,6 @@ class TasksController < ApplicationController
     end
   end
   
-  # POST create_sub
-  def create_sub
-    @task = Task.new(params[:task])
-    @task.parent_id = params[:task_id]
-    @task.user = current_user
-
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to(@task.parent, :notice => 'Task was successfully created.') }
-        format.xml  { render :xml => @task, :status => :created, :location => @task }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
   # PUT /tasks/1
   # PUT /tasks/1.xml
   def update

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.hidden_field :id, :value => @parent.id %>
+  </div>
+  
+  <div class="field">
     <%= f.label :label %><br />
     <%= f.text_field :label %>
   </div>

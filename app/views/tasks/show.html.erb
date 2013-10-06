@@ -6,8 +6,9 @@
 <%= render 'subtasks_desc' %>
 
 <br/>
-<%= link_to 'New Task', task_new_sub_path(@task) %> |
+<%= link_to 'New Task', new_task_path(:task_id => @task.id) %>
 
+<br/>
 <% if @task.parent.nil? %>
 	<%= link_to 'Back', tasks_path %>
 <% else %>
